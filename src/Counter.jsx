@@ -1,41 +1,63 @@
-import React,{useState} from "react";
-import './assets/csscounter.css'
-const Counter=()=>
-{
-    const[count,setCount]=useState(0);
+import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const [countInc,setCountInc]=useState();
-const[countDec,setCountDec]=useState();
+const Counter = () => {
+  const [count, setCount] = useState(0);
 
-const inc=()=>
-{
-    setCount(count+1)
-}
-const dec=()=>
-{
-    setCount(count-1);
-}
+  const inc = () => {
+    setCount(count + 1);
+  };
 
-return(
+  const dec = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
+  return (
     <>
-    <div className="Main-con" style={{   width:"30%",
-    height:"220px",
-    border:"1px solid #000",
-    padding:"10px",
-    color:"white",
-    textShadow:"2px 5px 3px black",
-    margin:"60px 0 0 380px",
-    textAlign:"center",
-    borderRadius:"10px",
-    boxShadow:"2px 2px 1px black;",
-    backgroundColor:"#CECECE"
-    }}> 
-    <h1>Counter Demo</h1>
-   <div id="display" style={{width:"100%",height:"80px",padding:"20px",marginTop:"10px",fontWeight:"bold",fontSize:"2rem",color:""}}>{count}</div>
-     <button className="b-1" style={{padding:"10px",borderRadius:"10px",backgroundColor:"#4FBA24",color:"white",cursor:"pointer",fontSize:"1.2rem"}}onClick={inc} >Increment</button>
-     <button className="b-2" onClick={dec} style={{padding:"10px",marginLeft:"10px",borderRadius:"10px",backgroundColor:"#D13E3F",cursor:"pointer",fontSize:"1.2rem",color:"white"}}>Decrement</button>
+      <div className="container d-flex justify-content-center align-items-center vh-100">
+        <div
+          className="text-center bg-light p-4 rounded shadow-lg"
+          style={{
+            boxShadow: "0 4px 15px rgba(128, 128, 128, 0.5)", // Gray border shadow
+          }}
+        >
+          <h1
+            className="mb-4 fw-bold"
+            style={{
+              color: "white", // White text for heading
+              textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)", 
+              backgroundColor: "#6c757d", 
+              padding: "10px",
+              borderRadius: "8px",
+              display: "inline-block",
+            }}
+          >
+            Counter Demo
+          </h1>
+          <div
+            id="display"
+            className="bg-white text-dark p-3 mb-4 rounded fs-1 fw-bold shadow-sm"
+          >
+            {count}
+          </div>
+          <button
+            className="btn btn-success me-2 px-4 py-2 fw-bold shadow"
+            onClick={inc}
+          >
+            Increment
+          </button>
+          <button
+            className="btn btn-danger px-4 py-2 fw-bold shadow"
+            onClick={dec}
+          >
+            Decrement
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
 
-     </div>    </>
-);
-}
 export default Counter;
