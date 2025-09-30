@@ -46,15 +46,18 @@ const Counter = () => {
             className="btn btn-success me-2 px-4 py-2 fw-bold shadow"
             onClick={inc}
           >
-            Increment
+            Increment COunter
           </button>
           <button
             className="btn btn-danger px-4 py-2 fw-bold shadow"
             onClick={dec}
           >
-            Decrement
+            Decrement Counter
           </button>
         </div>
+      </div>
+      <div>
+        Previous Data
       </div>
     </>
   );
